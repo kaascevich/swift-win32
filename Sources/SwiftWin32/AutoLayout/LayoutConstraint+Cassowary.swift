@@ -1,7 +1,7 @@
 // Copyright © 2020 Saleem Abdulrasool <compnerd@compnerd.org>.
 // SPDX-License-Identifier: BSD-3-Clause
 
-import Cassowary
+//import Cassowary
 
 extension LayoutConstraint.Attribute {
   internal var name: String {
@@ -39,27 +39,28 @@ extension LayoutAnchor {
 
 extension LayoutConstraint {
   internal var constraint: Constraint {
-    let lhs = firstAnchor.variable
-    let rhs: Cassowary.Variable? = secondAnchor?.variable
-
-    switch self.relation {
-    case .lessThanOrEqual:
-      if let rhs = rhs {
-        return Constraint(lhs <= rhs * self.multiplier + self.constant, .required)
-      }
-      return Constraint(lhs <= self.constant, .required)
-
-    case .equal:
-      if let rhs = rhs {
-        return Constraint(lhs * self.multiplier + self.constant == rhs, .required)
-      }
-      return Constraint(lhs * self.multiplier == self.constant, .required)
-
-    case .greaterThanOrEqual:
-      if let rhs = rhs {
-        return Constraint(lhs * self.multiplier + self.constant >= rhs, .required)
-      }
-      return Constraint(lhs * self.multiplier >= self.constant, .required)
-    }
+      fatalError("cassowary depends on an ancient version of swift-collections and is therefore disabled")
+//    let lhs = firstAnchor.variable
+//    let rhs: Cassowary.Variable? = secondAnchor?.variable
+//
+//    switch self.relation {
+//    case .lessThanOrEqual:
+//      if let rhs = rhs {
+//        return Constraint(lhs <= rhs * self.multiplier + self.constant, .required)
+//      }
+//      return Constraint(lhs <= self.constant, .required)
+//
+//    case .equal:
+//      if let rhs = rhs {
+//        return Constraint(lhs * self.multiplier + self.constant == rhs, .required)
+//      }
+//      return Constraint(lhs * self.multiplier == self.constant, .required)
+//
+//    case .greaterThanOrEqual:
+//      if let rhs = rhs {
+//        return Constraint(lhs * self.multiplier + self.constant >= rhs, .required)
+//      }
+//      return Constraint(lhs * self.multiplier >= self.constant, .required)
+//    }
   }
 }
