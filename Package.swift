@@ -18,7 +18,7 @@ let SwiftWin32: Package =
             .package(url: "https://github.com/apple/swift-log.git",
                      .upToNextMajor(from: "1.4.3")),
             .package(url: "https://github.com/apple/swift-collections.git",
-                     .upToNextMinor(from: "1.0.0")),
+                     .upToNextMajor(from: "1.0.0")),
             .package(url: "https://github.com/compnerd/cassowary.git",
                      branch: "main"),
             .package(url: "https://github.com/compnerd/swift-com.git",
